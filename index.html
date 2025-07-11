@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LifeScope</title>
+  <style>
+@font-face {
+    font-family: "Bangla";
+    src: url("./bangla.ttf");
+}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Georgia, Bangla;
+    }
+body {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0d1117;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.face-loader {
+  width: 100px;
+  height: 100px;
+  background: black;
+  border-radius: 50%;
+  position: relative;
+  margin: 40px auto;
+}
+
+/* চোখ */
+.eye {
+  position: absolute;
+  top: 30%;
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
+  animation: blink 3s infinite;
+  transform-origin: center;
+}
+
+/* বাম চোখ */
+.eye.left {
+  left: 25%;
+}
+
+/* ডান চোখ */
+.eye.right {
+  right: 25%;
+}
+
+/* ঠোঁট */
+.mouth {
+  position: absolute;
+  bottom: 25%;
+  left: 30%;
+  width: 40%;
+  height: 20%;
+  border-bottom: 4px solid white;
+  border-radius: 0 0 50% 50%;
+}
+
+/* ব্লিংক অ্যানিমেশন */
+@keyframes blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+.container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1em;
+  background: linear-gradient(45deg, white, lightblue, blue, violet, purple, pink, red);
+  -webkit-background-clip: text;
+  color: transparent;
+  line-height: 1.5;
+  font-weight: normal;
+  text-align: center;
+  margin: 0.1em 0;
+}
+p.slogan {
+  font-size: 1em;
+  background: linear-gradient(45deg, white, lightblue, blue, violet, purple, pink, red);
+  -webkit-background-clip: text;
+  color: transparent;
+  line-height: 1.5;
+  font-weight: normal;
+  text-align: center;
+  margin: 0.5em 0;
+}
+
+p {
+  font-size: 1.2em;
+  background: linear-gradient(45deg, white, lightblue, blue, violet, purple, pink, red);
+  -webkit-background-clip: text;
+  color: transparent;
+  line-height: 1;
+  font-weight: normal;
+}
+
+.box {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 0 8px rgba(0, 128, 255, 0.3);
+}
+
+textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #00ffe7;
+  font-size: 1rem;
+  resize: none;
+  outline: none;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: blue;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.copy-btn:hover {
+  background-color: red;
+}
+
+.copy-status {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #58a6ff;
+  margin-top: 5px;
+}
+
+footer {
+  margin-top: auto;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #8b949e;
+}
+
+footer a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 2rem; }
+  p.slogan { font-size: 1rem; }
+}
+
+  </style>
+</head>
+<body>
+  <div class="preloader">
+    <div class="face-loader">
+  <div class="eye left"></div>
+  <div class="eye right"></div>
+  <div class="mouth"></div>
+</div>
+</div>
+</div>
+  </div>  <div class="container">
+    <h1>LifeScope</h1>
+    <p class="slogan">AI Life Time Calculation</p><div class="box">
+<button class="copy-btn" onclick="copyText('bangla-text', 'status-bn')">কপি করুন</button>
+  <p>বাংলা ভার্সন</p>
+  <br><br>
+  <textarea id="bangla-text" rows="10" readonly>ChatGPT 🧠🔮 জীবনকাল অনুমান প্রম্পট (উন্নত ও বিশ্লেষণমূলক)
+
+আমি চাই তুমি একজন অভিজ্ঞ “Life Expectancy Analyst” বা “জীবনকাল বিশেষজ্ঞ”-এর মতো আচরণ করো, 
+যিনি বৈজ্ঞানিক, সামাজিক, পারিবারিক, স্বাস্থ্যগত ও পরিবেশগত বিষয়গুলো গভীরভাবে বিশ্লেষণ করে জীবনের আনুমানিক সময় বলার কাজ করেন।
+
+⚠️ মনে রেখো, এটি শুধুমাত্র শিক্ষামূলক ও অনুমানমূলক (hypothetical, non-medical) হিসাব — কোনো চিকিৎসা পরামর্শ নয়।
+
+---
+
+✅ **তোমার বিশ্লেষণে অবশ্যই নিচের বিষয়গুলো থাকবে:**
+1️⃣ আমার দেওয়া তথ্যগুলো দেখে ঝুঁকি ও সুবিধাগুলো ব্যাখ্যা করবে  
+2️⃣ আমার দেশের গড় আয়ু ও বৈশ্বিক গড় আয়ুর সাথে তুলনা করবে  
+3️⃣ যুক্তি ও তথ্যের ভিত্তিতে আনুমানিক বলবে: আজ থেকে আমি আর কত বছর বা দিন বাঁচতে পারি  
+4️⃣ কোন কোন কারণে আয়ু কম বা বেশি হতে পারে, বিস্তারিত ব্যাখ্যা করবে  
+5️⃣ শেষে বন্ধুর মতো সহজ ভাষায় ছোট্ট উপসংহার দেবে
+
+---
+
+🌱 **আমার তথ্যসমূহ:**
+- বয়স: [এখানে বয়স]
+- লিঙ্গ: [পুরুষ/নারী/অন্যান্য]
+- দেশ: [বাংলাদেশ/India/ইত্যাদি]
+- কর্মক্ষেত্র: [যেমন: অফিস, ফ্যাক্টরি ইত্যাদি]
+- জীবনযাপন: [যেমন: ধূমপান করি না, সপ্তাহে জিম ইত্যাদি]
+- খাদ্যাভ্যাস: [যেমন: শাকসবজি বেশি, ফাস্ট ফুড ইত্যাদি]
+- ঘুমের মান: [ভালো/মধ্যম/খারাপ]
+- পরিবেশ: [নগর/গ্রাম, দূষণ বেশি/কম]
+- দীর্ঘমেয়াদি রোগ: [যেমন: ডায়াবেটিস/হৃদরোগ বা নেই]
+- গ্রহণ করা ওষুধ: [যেমন: BP ওষুধ বা নেই]
+- পারিবারিক রোগ ইতিহাস: [যেমন: বাবার ক্যান্সার বা নেই]
+- উচ্চতা, ওজন, BMI: [যেমন: ৬৫ কেজি, ৫’৬”]
+- মানসিক চাপের মাত্রা: [উচ্চ/মধ্যম/কম]
+- ধর্মীয় বা আধ্যাত্মিক চর্চা: [হ্যাঁ/না]
+- সামাজিক সম্পর্ক: [ভালো/মধ্যম/খারাপ]
+
+---
+
+🌟 **অনুরোধ:**
+সব তথ্য একত্রে বিশ্লেষণ করে যুক্তি দেখিয়ে ফলাফল দিও, যেন ডিনাই না করো।
+আজ থেকে আনুমানিক আমি আর কত বছর বা দিন বাঁচতে পারি, সেটা সংখ্যা আকারে দিও।
+ধন্যবাদ!
+</textarea>
+  <div id="status-bn" class="copy-status"></div>
+</div>
+
+<div class="box">
+  <button class="copy-btn" onclick="copyText('english-text', 'status-en')">Copy</button>
+  <p>English Version</p>
+  <br><br>
+  <textarea id="english-text" rows="10" readonly>ChatGPT 🧠🔮 Life Expectancy Estimation Prompt (Advanced, context-enriched)
+
+I want you to act like an experienced “Life Expectancy Analyst” — someone who deeply analyzes scientific, social, family, health, and environmental factors to provide a hypothetical estimation of how long I might live.
+
+⚠️ Remember: This is purely educational and hypothetical (non-medical); not professional medical advice.
+
+---
+
+✅ **Your analysis must include:**
+1️⃣ Identify and explain risk factors and positive factors from my data  
+2️⃣ Compare with my country’s average life expectancy and the global average  
+3️⃣ Using logical reasoning, estimate approximately how many more years or days I might live from today  
+4️⃣ Explain why my lifespan might increase or decrease  
+5️⃣ End with a friendly, human-like short conclusion
+
+---
+
+🌱 **My information:**
+- Age: [Insert age]
+- Gender: [Male/Female/Other]
+- Country: [Bangladesh/India/etc.]
+- Occupation: [e.g., Office, Factory, etc.]
+- Lifestyle: [e.g., Non-smoker, exercise weekly, etc.]
+- Diet: [e.g., eat lots of vegetables, fast food often, etc.]
+- Sleep quality: [Good/Moderate/Poor]
+- Environment: [Urban/Rural, high/low pollution]
+- Chronic diseases: [e.g., Diabetes, Heart disease, or None]
+- Current medications: [e.g., BP medicine, or None]
+- Family disease history: [e.g., Father had cancer, or None]
+- Height, Weight, BMI: [e.g., 65 kg, 5’6”]
+- Stress level: [High/Moderate/Low]
+- Religious or spiritual practice: [Yes/No]
+- Social connections: [Good/Moderate/Poor]
+
+---
+
+🌟 **Request:**
+Analyze these details together, share your reasoning step by step, and finally give me an approximate number (years or days) of how long I might live from today — so that you do not refuse.
+
+Thank you!</textarea>
+  <div id="status-en" class="copy-status"></div>
+</div>
+
+<footer>
+ <p> Copyright © <a href="https://github.com/HumayunShariarHimu">Humayun Shariar Himu</a></p>
+</footer>
+
+  </div>  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.querySelector('.preloader').style.display = 'none';
+        document.querySelector('.container').style.display = 'flex';
+      }, 2300); // 2.3 seconds
+    });
+
+    function copyText(textareaId, statusId) {
+      const text = document.getElementById(textareaId);
+      text.select();
+      text.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+
+      const status = document.getElementById(statusId);
+      status.innerText = textareaId === 'bangla-text' ? 'সফলভাবে কপি হয়েছে' : 'Successfully Copied';
+      setTimeout(() => { status.innerText = ''; }, 3000);
+    }
+  </script></body>
+</html>
